@@ -1,23 +1,22 @@
 import Ember from "ember";
 import customerDisplayTemplate from "dummy/templates/resource-cards/customer-card";
+import customerSearchTemplate from "dummy/templates/resource-cards/customer-search";
 import dealDisplayTemplate from "dummy/templates/resource-cards/deal-card";
+import dealSearchTemplate from "dummy/templates/resource-cards/deal-search";
 
-//import computed from 'ember-computed-decorators';
-//import {  } from 'ember-computed-decorators';
-const {Controller} = Ember;
+
+const {Controller,computed} = Ember;
+const {alias} = computed;
 export default Controller.extend({
+
+  deals: alias("model.deals"),
+  customers: alias("model.customers"),
+  customerSearchTemplate: customerSearchTemplate,
   customerDisplayTemplate: customerDisplayTemplate,
   dealDisplayTemplate: dealDisplayTemplate,
-  customer: Ember.Object.create({
-    companyName: "Foo",
-    address: "1234 Anywhere St.",
-  }),
-  deal: Ember.Object.create({
-    name: "XYZ Loan",
-    address: "412 S. Westshore Blvd",
-    loanAmount: 50000,
+  dealSearchTemplate: dealSearchTemplate,
+  deal2: null,
 
-  }),
 
   
 });

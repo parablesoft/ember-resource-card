@@ -1,1 +1,24 @@
-{{resource-display resource=resource layout=displayTemplate}}
+{{#if resource}}
+
+<div class="content">
+{{#if icon}}
+  <div class="right floated mini ui image">
+    {{#fa-stack size="lg" as |s|}}
+    {{s.stack-2x "circle"}}
+    {{s.stack-1x icon inverse=true}}
+    {{/fa-stack}}
+  </div>
+{{/if}}
+  {{resource-display resource=resource layout=displayTemplate}}
+
+</div>
+
+<div class="ui bottom attached button">
+  <a href="#" {{action "changeResource"}}>Change {{resourceName}}</a>
+</div>
+{{else}}
+  {{resource-search 
+  	resource=resource
+  	searchTemplate=searchTemplate
+  	searchClass=searchClass}} 
+{{/if}}
