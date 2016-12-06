@@ -1,7 +1,7 @@
 {
   "name": "ember-resource-card",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "WIP: Search,find,view details,edit and add a record of any type",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,16 +11,17 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": "https://github.com/parablesoft/ember-resource-card",
+  "issues": "https://github.com/parablesoft/ember-resource-card/issues",
+  "homepage": "https://github.com/parablesoft/ember-resource-card",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Vic Amuso <vic@parablesoft.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",
-    "ember-aupac-typeahead": "2.0.8",
     "ember-cli": "2.6.3",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-dependency-checker": "^1.2.0",
@@ -37,6 +38,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "ember-aupac-typeahead": "2.1.1",
     "loader.js": "^4.0.1"
   },
   "keywords": [
@@ -44,7 +46,7 @@
   ],
   "dependencies": {
     "ember-font-awesome": "2.2.0",
-    "ember-cli-htmlbars": "^1.0.3",
+    "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-babel": "^5.1.6"
   },
   "ember-addon": {
