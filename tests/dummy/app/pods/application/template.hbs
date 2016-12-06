@@ -1,31 +1,37 @@
 <h1>Customer Card</h1>
 {{resource-card 
-	searchClass="customer"
-	icon="building"
-	searchTemplate=customerSearchTemplate
-	resourceName="Customer"
-	resource=customer2 
-	displayTemplate=customerDisplayTemplate}}
+searchClass="customer"
+icon="building"
+notFoundTemplate=customerNotFoundTemplate
+searchTemplate=customerSearchTemplate
+newTemplate=customerNewTemplate
+resourceName="Customer"
+resource=customer2 
+newResource=newCustomer
+onCreate=(action "create")
+onUpdate=(action "update")
+editFormTemplate=customerEditFormTemplate
+displayTemplate=customerDisplayTemplate}}
 
 <hr/>
 <ul>
   {{#each customers as |customer|}}
-  	<li>{{customer.name}}</li>
+  <li>{{customer.name}}</li>
   {{/each}}
 </ul>
 <h1>Deal Card</h1>
 <div style="margin-bottom:20px; clear:both;">
-{{resource-card 
-	searchClass="deal"
-	icon="dollar"
-	resourceName="Deal"
-	searchTemplate=dealSearchTemplate
-	resource=deal2 displayTemplate=dealDisplayTemplate}}
+  {{resource-card 
+  searchClass="deal"
+  icon="dollar"
+  resourceName="Deal"
+  searchTemplate=dealSearchTemplate
+  resource=deal2 displayTemplate=dealDisplayTemplate}}
 
 </div>
 <hr/>
 <ul>
   {{#each deals as |deal|}}
-  	<li>{{deal.name}}</li>
+  <li>{{deal.name}}</li>
   {{/each}}
 </ul>

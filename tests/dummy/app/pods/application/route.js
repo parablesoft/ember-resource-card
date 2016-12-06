@@ -7,6 +7,7 @@ model(){
   return new RSVP.hash({
     deals: this.store.findAll("deal"),
     customers: this.store.findAll("customer"),
+    newCustomer: this.store.createRecord("customer"),
   });
 }
 });

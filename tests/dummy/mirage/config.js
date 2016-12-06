@@ -11,6 +11,9 @@ export default function() {
     return doSearch(this,data,request);
   });
 
+  this.patch("/customers/:id");
+  this.post("/customers");
+
   function getFilter(request){
     return request.queryParams["filter[search]"];
   }

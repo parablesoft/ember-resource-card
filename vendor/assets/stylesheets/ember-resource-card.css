@@ -195,3 +195,8 @@ input.tt-hint{
   font-style: normal;
 }
 
+
+.resource-not-found{
+  padding:20px;
+  font-size:0.8em;
+}

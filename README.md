@@ -1,6 +1,6 @@
 # Ember-resource-card
 
-This README outlines the details of collaborating on this Ember addon.
+An addon which allows you to search for an entity using a typeahead, display the details of that entity once it's been selected. Edit it in place, and add a new one. Very much a WIP. Use at your own risk. 
 
 ## Installation
 
@@ -8,19 +8,8 @@ This README outlines the details of collaborating on this Ember addon.
 * `npm install`
 * `bower install`
 
-## Running
 
-* `ember server`
-* Visit your app at http://localhost:4200.
 
-## Running Tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+//TODO
+1. Implement option for using ember-changeset. https://github.com/DockYard/ember-changeset
