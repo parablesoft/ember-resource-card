@@ -1,15 +1,10 @@
 /*jshint node:true*/
 module.exports = {
   description: '',
-
-  // locals: function(options) {
-  //   // Return custom template variables here.
-  //   return {
-  //     foo: options.entity.options.foo
-  //   };
-  // }
-
+  normalizeEntityName: function() {},
   afterInstall: function(options) {
-    return this.addPackageToProject("ember-aupac-typeahead","2.1.1");
+    this.addAddonToProject('ember-ui-helpers', '');
+    this.addAddonToProject('ember-cli-state-select', '');
+    return this.addAddonToProject("ember-aupac-typeahead","^2.1.1");
   }
 };

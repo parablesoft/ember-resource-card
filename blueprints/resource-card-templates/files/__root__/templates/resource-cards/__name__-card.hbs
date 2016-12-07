@@ -1,33 +1,24 @@
-<%if(classifiedModuleName == "Customer"){%>
 <a href="#" class="header">
   {{resource.name}}
 </a>
 <div class="description">
+<%if(classifiedModuleName == "Customer"){%>
+  <div>
+    {{resource.address}}
+  </div>
+  <div >
+    {{resource.city}}, {{resource.state}} {{resource.zip}}<br>
+  </div>
+    {{#if resource.phone}}
     <div>
-      {{resource.address}}
+      <i class="fa fa-mobile-phone"></i> {{resource.phone}}<br>
     </div>
-    <div >
-      {{resource.city}}, {{resource.state}} {{resource.zip}}<br>
+    {{/if}}
+    {{#if resource.email}}
+    <div>
+      {{fa-icon "envelope"}}
+      <a href="mailto:{{resource.email}}"> {{resource.email}}</a><br>
     </div>
-      {{#if resource.phone}}
-      <div>
-	<i class="fa fa-mobile-phone"></i> {{resource.phone}}<br>
-      </div>
-      {{/if}}
-      {{#if resource.email}}
-      <div>
-	{{fa-icon "envelope"}}
-	<a href="mailto:{{resource.email}}"> {{resource.email}}</a><br>
-      </div>
-      {{/if}}
-</div>
+    {{/if}}
 <% }%>
-<%if(classifiedModuleName == "Deal"){%>
-<a href="#" class="header">
-{{resource.name}}
-</a>
-<div class="description">
-  {{resource.loanAmount}}<br/>
-  {{resource.address}}
 </div>
-<% }%>

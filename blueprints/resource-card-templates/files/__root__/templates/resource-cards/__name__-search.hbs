@@ -1,8 +1,12 @@
 <div class="search-result">
   {{model.name}}<br/>
   <div class="search-details">
-    <span>
-      {{model.address}}
-    </span>
+      <span>
+    <%if(classifiedModuleName == "Customer"){%>
+	  <i class="fa fa-mobile-phone"></i> {{model.phone}}<br/>
+	  {{model.city}}, {{model.state}}
+    <%}else{%>
+    <%}%>
+      </span>
   </div>
 </div>

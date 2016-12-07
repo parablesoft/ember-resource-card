@@ -1,13 +1,14 @@
 /*jshint node:true*/
 module.exports = {
-  description: ''
+  description: '',
 
-  // locals: function(options) {
-  //   // Return custom template variables here.
-  //   return {
-  //     foo: options.entity.options.foo
-  //   };
-  // }
+
+  locals: function(options) {
+    // Return custom template variables here.
+    return {
+      resourceName: options.entity.name,
+    };
+  }
 
   // afterInstall: function(options) {
   //   // Perform extra work here.
