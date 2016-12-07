@@ -12,7 +12,7 @@ export default Component.extend({
   actions:{
     openSearchResult(result){
       set(this,"resource",result);
-      if(this.attrs.onOpenSearchResult!=undefined){
+      if(this.attrs.onOpenSearchResult.value!=undefined){
 	this.attrs.onOpenSearchResult();
       }
     }

@@ -1,6 +1,6 @@
 {
   "name": "ember-resource-card",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "WIP: Search,find,view details,edit and add a record of any type",
   "directories": {
     "doc": "doc",
@@ -49,6 +49,7 @@
     "ember-addon"
   ],
   "dependencies": {
+    "ember-ui-helpers": "",
     "ember-cli-htmlbars": "^1.0.10",
     "ember-cli-babel": "^5.1.6"
   },
