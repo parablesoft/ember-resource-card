@@ -12,7 +12,9 @@ export default Component.extend({
   actions:{
     openSearchResult(result){
       set(this,"resource",result);
-      
+      if(this.attrs.onOpenSearchResult!=undefined){
+	this.attrs.onOpenSearchResult();
+      }
     }
   }
 });

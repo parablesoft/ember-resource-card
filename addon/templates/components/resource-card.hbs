@@ -1,44 +1,52 @@
 {{#if resource}}
 
-<div class="content">
   {{#unless isEditing}}
-  {{#if icon}}
-  <div class="right floated mini ui image">
-    {{#fa-stack size="lg" as |s|}}
-    {{s.stack-2x "circle"}}
-    {{s.stack-1x icon inverse=true}}
-    {{/fa-stack}}
-  </div>
-  {{/if}}
-  {{resource-display resource=resource layout=displayTemplate}}
 
-  <div class="ui bottom attached button">
-    <a href="#" {{action "change"}}>Change {{resourceName}}</a>
+  <div class="content">
+    {{#if icon}}
+    <div class="right floated mini ui image">
+      {{#fa-stack size="lg" as |s|}}
+      {{s.stack-2x "circle"}}
+      {{s.stack-1x icon inverse=true}}
+      {{/fa-stack}}
+    </div>
+    {{/if}}
+    {{resource-display resource=resource layout=displayTemplate}}
   </div>
-  <div class="ui bottom attached button">
-    <a href="#" {{action "edit"}}>Edit {{resourceName}}</a> 
+  <div class="extra content">
+    <a href="#" class="left floated resource-card-change" {{action "change"}}>
+      Change {{resourceName}}
+    </a>
+    <a href="#" class="right floated resource-card-edit" {{action "edit"}}>
+      Edit
+    </a>
   </div>
   {{else}}
+<div class="content">
   {{#resource-form-wrapper onCancel=(action "cancelEdit") onSave=(action "update")}}
     {{resource-form layout=editFormTemplate resource=resource}}
-    {{/resource-form-wrapper}}
-  {{/unless}}
+  {{/resource-form-wrapper}}
 </div>
-
+  {{/unless}}
 {{else}}
 {{#if isAdding}}
-
+<div class="content">
   {{#resource-form-wrapper onCancel=(action "cancelAdd") onSave=(action "create")}}
     {{resource-form layout=newTemplate resource=newResource}}
   {{/resource-form-wrapper}}
+</div>
 {{else}}
+<div class="content">
 {{resource-search 
 resource=resource
 notFoundTemplate=notFoundTemplate
 searchTemplate=searchTemplate
 searchClass=searchClass}} 
+</div>
   {{#if newTemplate}}
-  or <a {{action "addNew"}} href="#">Add a new {{resourceName}}</a>
+  <div class="extra content">
+    <a {{action "addNew"}} class="left floated resource-card-add" href="#">Add a new {{resourceName}}</a>
+  </div>
   {{/if}}
 {{/if}}
 {{/if}}
