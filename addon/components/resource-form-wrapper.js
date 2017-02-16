@@ -7,8 +7,8 @@ export default Ember.Component.extend({
     cancel(){
       this.attrs.onCancel();
     },
-    save(){
-      this.attrs.onSave();
+    save(changeset){
+      this.attrs.onSave(changeset);
     }
   }
 });

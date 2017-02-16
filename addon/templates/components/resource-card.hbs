@@ -14,32 +14,36 @@
     {{resource-display resource=resource layout=displayTemplate}}
   </div>
   <div class="extra content">
+    {{#if isChangeAllowed}}
     <a href="#" class="left floated resource-card-change" {{action "change"}}>
       Change {{resourceName}}
     </a>
+    {{/if}}
+    {{#if isEditAllowed}}
     <a href="#" class="right floated resource-card-edit" {{action "edit"}}>
       Edit
     </a>
+    {{/if}}
   </div>
   {{else}}
 <div class="content">
-  {{#resource-form-wrapper onCancel=(action "cancelEdit") onSave=(action "update")}}
-    {{resource-form layout=editFormTemplate resource=resource}}
+  {{#resource-form-wrapper onCancel=(action "cancelEdit") onSave=(action "update") resource=resource as |changeset|}}
+    {{resource-form layout=editFormTemplate resource=changeset}}
   {{/resource-form-wrapper}}
 </div>
   {{/unless}}
 {{else}}
 {{#if isAdding}}
 <div class="content">
-  {{#resource-form-wrapper onCancel=(action "cancelAdd") onSave=(action "create")}}
-    {{resource-form layout=newTemplate resource=newResource}}
+  {{#resource-form-wrapper onCancel=(action "cancelAdd") onSave=(action "create") resource=newResource as |changeset|}}
+    {{resource-form layout=newTemplate resource=changeset}}
   {{/resource-form-wrapper}}
 </div>
 {{else}}
 <div class="content">
 {{resource-search 
 resource=resource
-onOpenSearchResult=onSearchResultSelected
+onOpenSearchResult=(action "openSearchResult")
 notFoundTemplate=notFoundTemplate
 searchTemplate=searchTemplate
 searchClass=searchClass}} 

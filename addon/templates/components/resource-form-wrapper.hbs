@@ -1,5 +1,7 @@
-  <form {{action "save" on="submit"}}>
-    {{yield}}
+{{#with (changeset resource) as |changeset|}}
+  <form {{action "save" changeset on="submit"}}>
+    {{yield changeset}}
     <hr/>
     <button class="ui positive button">Save</button> or <a href="#" {{action "cancel"}}>cancel</a>
   </form>
+ {{/with}}

@@ -13,7 +13,7 @@ export default Component.extend({
     openSearchResult(result){
       set(this,"resource",result);
       if(typeof(this.attrs.onOpenSearchResult)==="function"){
-	this.attrs.onOpenSearchResult();
+	this.attrs.onOpenSearchResult(result);
       }
     }
   }
