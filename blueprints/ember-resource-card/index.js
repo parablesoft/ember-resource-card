@@ -10,7 +10,7 @@ module.exports = {
         { name: 'ember-aupac-typeahead', target: '2.1.1' },
         { name: 'ember-ui-helpers', target: '0.0.34' },
         { name: 'ember-changeset', target: '1.2.0' },
-	{ name : 'ember-cli-state-select', target: '0.0.9'}
+	{ name : 'ember-cli-states-select', target: '0.0.9'}
       ],
       blueprintOptions: {
         saveDev: true
